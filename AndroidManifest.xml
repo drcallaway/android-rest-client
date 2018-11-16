@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.sourcestream.android.restclient"
+      android:versionCode="7"
+      android:versionName="1.2">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15" />
+
+    <application android:label="@string/app_name" android:icon="@drawable/http_128">
+        <activity android:name=".SplashActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".AboutActivity"/>
+        <activity android:name=".SettingsActivity"/>
+        <activity android:name=".RateAppActivity" android:theme="@style/Theme.Transparent"/>
+    </application>
+</manifest> 

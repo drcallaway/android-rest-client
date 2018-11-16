@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/WrapFill" android:padding="5dp">
+    <TableRow>
+        <TextView style="@style/WrapWrap" android:text="@string/header_type" android:layout_gravity="center_vertical"/>
+        <LinearLayout style="@style/WrapFill"> <!-- this keeps spinner width from growing when text boxes wrap -->
+            <Spinner android:id="@+id/headerType" style="@style/WrapWrap" android:entries="@array/header_types"/>
+        </LinearLayout>
+    </TableRow>
+    <TableRow android:id="@+id/headerNameRow">
+        <TextView style="@style/WrapWrap" android:text="@string/header_name" android:paddingRight="5dp"/>
+        <EditText style="@style/WrapFill" android:id="@+id/headerName" android:layout_weight="1"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:id="@+id/headerValueLabel" style="@style/WrapWrap" android:text="@string/header_value" android:paddingRight="5dp"/>
+        <EditText style="@style/WrapFill" android:id="@+id/headerValue" android:layout_weight="1"/>
+    </TableRow>
+    <TableRow android:id="@+id/authPasswordRow" android:visibility="gone">
+        <TextView android:id="@+id/headerValueLabel" style="@style/WrapWrap" android:text="@string/auth_password" android:paddingRight="5dp"/>
+        <EditText style="@style/WrapFill" android:id="@+id/authPassword" android:layout_weight="1"/>
+    </TableRow>
+</TableLayout>

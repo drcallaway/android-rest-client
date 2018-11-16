@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:title="@string/pref_trust_certs_title"
+        android:defaultValue="true"
+        android:summary="@string/pref_trust_certs_desc"
+        android:key="trustCerts"/>
+    <CheckBoxPreference
+        android:title="@string/pref_default_to_https_title"
+        android:defaultValue="false"
+        android:summary="@string/pref_default_to_https_desc"
+        android:key="defaultHttps"/>
+    <CheckBoxPreference
+        android:title="@string/pref_delete_headers_title"
+        android:defaultValue="true"
+        android:summary="@string/pref_delete_headers_desc"
+        android:key="deleteHeaders"/>
+    <EditTextPreference
+        android:title="@string/pref_set_timeout_title"
+        android:defaultValue="10"
+        android:summary="@string/pref_set_timeout_desc"
+        android:numeric="integer"
+        android:key="timeoutInSeconds"/>
+</PreferenceScreen>

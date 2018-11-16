@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/WrapFill"
+    android:layout_alignParentBottom="true" android:id="@+id/buttonBar">
+    <Button style="@style/WrapFill" android:text="Send" android:id="@+id/sendButton" android:textSize="16sp"
+        android:layout_weight="3" android:layout_width="0dp" android:textStyle="bold" android:onClick="onClick"/>
+    <Button style="@style/WrapFill" android:text="Save" android:id="@+id/saveButton"
+        android:layout_weight="1" android:layout_width="0dp" android:textStyle="bold" android:onClick="onClick"/>
+    <Button style="@style/WrapFill" android:text="Load" android:id="@+id/loadButton"
+        android:layout_weight="1" android:layout_width="0dp" android:textStyle="bold" android:onClick="onClick"/>
+    <Button style="@style/WrapFill" android:text="Delete" android:id="@+id/deleteButton"
+        android:layout_weight="1" android:layout_width="0dp" android:textStyle="bold" android:onClick="onClick"/>
+    <Button style="@style/WrapFill" android:text="Clear" android:id="@+id/clearButton"
+        android:layout_weight="1" android:layout_width="0dp" android:textStyle="bold" android:onClick="onClick"/>
+</LinearLayout>

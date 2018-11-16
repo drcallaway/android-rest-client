@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" style="@style/FillFill">
+
+    <TabHost xmlns:android="http://schemas.android.com/apk/res/android" android:id="@android:id/tabhost"
+             style="@style/FillFill">
+        <LinearLayout android:orientation="vertical" style="@style/FillFill">
+            <View android:layout_width="fill_parent" android:layout_height="0.5dp"
+                  android:background="#000"/>
+            <TabWidget android:id="@android:id/tabs" android:divider="@drawable/tab_divider"
+                       android:layout_width="fill_parent" android:layout_height="wrap_content"
+                       android:layout_marginLeft="0dip" android:layout_marginRight="0dp"/>
+            <View android:layout_width="fill_parent" android:layout_height="2dp"
+                  android:background="#696969"/>
+            <View android:layout_width="fill_parent" android:layout_height="2dp"
+                  android:background="#000"/>
+            <FrameLayout android:id="@android:id/tabcontent" style="@style/FillFill">
+
+                <RelativeLayout style="@style/FillFill" android:id="@+id/requestTab">
+                    <include layout="@layout/button_bar"/>
+                    <!-- orientation-specific button bar -->
+
+                    <ScrollView style="@style/FillFill" android:id="@+id/requestInfo"
+                                android:layout_above="@id/buttonBar" android:padding="10dp">
+                        <LinearLayout style="@style/FillFill" android:orientation="vertical">
+                            <!-- HTTP method -->
+                            <LinearLayout style="@style/WrapFill">
+                                <TextView android:id="@+id/httpMethodLabel" style="@style/WrapWrapLabel"
+                                          android:text="@string/http_method" android:paddingRight="5dp"/>
+                                <Spinner android:id="@+id/httpMethodSpinner" style="@style/WrapWrap"
+                                         android:entries="@array/http_methods_array"/>
+                            </LinearLayout>
+
+                            <!-- URL -->
+                            <TextView style="@style/WrapWrapLabel" android:text="@string/url"
+                                      android:paddingTop="10dp"/>
+                            <EditText android:id="@+id/url" style="@style/WrapFill"
+                                      android:inputType="textUri|textMultiLine"/>
+
+                            <!-- Headers -->
+                            <LinearLayout style="@style/WrapFill" android:paddingTop="10dp">
+                                <TextView android:id="@+id/headerLabel" style="@style/WrapWrapLabel"
+                                          android:text="@string/http_headers"
+                                          android:layout_weight="1"/>
+                                <ImageView android:id="@+id/headerDelete" style="@style/WrapWrap"
+                                           android:src="@drawable/delete_header_selector"
+                                           android:onClick="onClick" android:clickable="true"
+                                           android:paddingRight="10dp" android:visibility="gone"/>
+                                <ImageView android:id="@+id/headerAdd" style="@style/WrapWrap"
+                                           android:src="@drawable/add_header_selector"
+                                           android:onClick="onClick" android:clickable="true"/>
+                            </LinearLayout>
+
+                            <LinearLayout android:id="@+id/headers" style="@style/WrapFill"
+                                          android:orientation="vertical"
+                                          android:layout_marginLeft="10dp">
+                            </LinearLayout>
+
+                            <!-- Body -->
+                            <LinearLayout android:id="@+id/bodySection" style="@style/WrapFill"
+                                          android:orientation="vertical" android:visibility="gone">
+                                <TextView style="@style/WrapFillLabel" android:text="@string/body"
+                                          android:paddingTop="10dp"/>
+                                <EditText android:id="@+id/body" style="@style/WrapFill"
+                                          android:inputType="textMultiLine"
+                                          android:layout_marginBottom="20dp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </ScrollView>
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/FillFill" android:id="@+id/responseTab">
+                    <ScrollView style="@style/FillFill">
+                        <LinearLayout style="@style/FillFill" android:orientation="vertical" android:paddingTop="10dp">
+                            <TextView android:id="@+id/responseHeadersLabel" style="@style/WrapFillLabel"
+                                android:text="@string/response_headers" android:background="#555555"
+                                android:textColor="#ffffff" android:paddingLeft="3dp" android:layout_weight="1"/>
+
+                            <EditText android:id="@+id/responseHeaders" style="@style/WrapFill"
+                                android:textColor="#dddddd" android:editable="false"
+                                android:textSize="14sp" android:background="#000000"
+                                android:paddingLeft="10dp" android:paddingTop="5dp" android:visibility="gone"/>
+
+                            <TextView android:id="@+id/responseHeaders2" style="@style/WrapFill"
+                                android:textColor="#dddddd" android:textIsSelectable="true"
+                                android:textSize="14sp" android:background="#000000"
+                                android:paddingLeft="10dp" android:paddingTop="5dp"/>
+
+                            <TextView style="@style/WrapFillLabel" android:text="@string/response_body"
+                                android:background="#555555"
+                                android:textColor="#ffffff" android:paddingLeft="3dp" android:layout_weight="1"/>
+
+                            <EditText android:id="@+id/responseBody" style="@style/WrapFill"
+                                android:textColor="#dddddd" android:editable="false"
+                                android:textSize="14sp" android:background="#000000"
+                                android:paddingLeft="10dp" android:paddingTop="5dp" android:visibility="gone"/>
+
+                            <TextView android:id="@+id/responseBody2" style="@style/WrapFill"
+                                android:textColor="#dddddd" android:textIsSelectable="true"
+                                android:textSize="14sp" android:background="#000000"
+                                android:paddingLeft="10dp" android:paddingTop="5dp"/>
+                        </LinearLayout>
+                    </ScrollView>
+                </RelativeLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>
